@@ -1,0 +1,7 @@
+step 1 build docker image: docker build -t rajohan/comments .
+step 2 push image to docker hub: docker push rajohan/comments
+step 3 apply config files to k8s: kubectl apply -f . (kubectl apply -f filename.yaml for adding a single config)
+
+To update a k8s after changes/updates: kubectl rollout restart deployment event-bus-depl
+
+To add ingress-nginx: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.43.0/deploy/static/provider/cloud/deploy.yaml
